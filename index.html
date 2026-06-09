@@ -10,6 +10,9 @@
     --bg:#06080f;--card:rgba(15,20,35,.85);--card-solid:#111827;--card-hover:rgba(25,35,55,.9);
     --text:#e2e8f0;--text-dim:#94a3b8;--accent:#3b82f6;
     --eu:#6366f1;--in:#f59e0b;--ru:#ef4444;--tr:#10b981;
+    --cn:#D32F2F;--jp:#7B1FA2;--kr:#1565C0;--us:#1976D2;--br:#388E3C;
+    --gb:#5C6BC0;--ca:#00796B;--au:#F57C00;--sg:#E91E63;--my:#AD1457;
+    --th:#00838F;--id:#FF6F00;--sa:#2E7D32;--ae:#00695C;
     --border:rgba(30,41,59,.6);
   }
   body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;overflow-x:hidden;min-height:100vh}
@@ -21,10 +24,13 @@
   .header .update-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(59,130,246,.1);color:#60a5fa;padding:5px 14px;border-radius:20px;font-size:.8rem;margin-top:12px;border:1px solid rgba(59,130,246,.2);backdrop-filter:blur(8px);animation:fadeSlideDown .8s ease .2s both}
   @keyframes fadeSlideDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
 
-  .dashboard{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1200px;margin:24px auto;padding:0 20px;position:relative;z-index:1}
+  .dashboard{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;max-width:1400px;margin:24px auto;padding:0 20px;position:relative;z-index:1}
   .stat-card{background:var(--card);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:16px;padding:22px 16px;text-align:center;transition:all .35s cubic-bezier(.4,0,.2,1);cursor:pointer;position:relative;overflow:hidden}
   .stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:16px 16px 0 0;opacity:0;transition:opacity .3s}
   .stat-card.eu::before{background:linear-gradient(90deg,var(--eu),#818cf8)}.stat-card.in::before{background:linear-gradient(90deg,var(--in),#fbbf24)}.stat-card.ru::before{background:linear-gradient(90deg,var(--ru),#f87171)}.stat-card.tr::before{background:linear-gradient(90deg,var(--tr),#34d399)}
+  .stat-card.cn::before{background:linear-gradient(90deg,var(--cn),#ef5350)}.stat-card.jp::before{background:linear-gradient(90deg,var(--jp),#BA68C8)}.stat-card.kr::before{background:linear-gradient(90deg,var(--kr),#42A5F5)}.stat-card.us::before{background:linear-gradient(90deg,var(--us),#42A5F5)}
+  .stat-card.br::before{background:linear-gradient(90deg,var(--br),#66BB6A)}.stat-card.gb::before{background:linear-gradient(90deg,var(--gb),#9FA8DA)}.stat-card.sg::before{background:linear-gradient(90deg,var(--sg),#F48FB1)}.stat-card.th::before{background:linear-gradient(90deg,var(--th),#4DD0E1)}
+  .stat-card.id::before{background:linear-gradient(90deg,var(--id),#FFB74D)}.stat-card.au::before{background:linear-gradient(90deg,var(--au),#FFB74D)}.stat-card.sa::before{background:linear-gradient(90deg,var(--sa),#81C784)}.stat-card.ae::before{background:linear-gradient(90deg,var(--ae),#80CBC4)}
   .stat-card:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.12);box-shadow:0 12px 40px rgba(0,0,0,.3)}
   .stat-card:hover::before{opacity:1}
   .stat-card .flag{font-size:1.8rem;margin-bottom:8px;display:block}
@@ -35,6 +41,20 @@
   .stat-card.in .num{color:var(--in)}.stat-card.in .fine{background:rgba(245,158,11,.12);color:#fbbf24}
   .stat-card.ru .num{color:var(--ru)}.stat-card.ru .fine{background:rgba(239,68,68,.12);color:#f87171}
   .stat-card.tr .num{color:var(--tr)}.stat-card.tr .fine{background:rgba(16,185,129,.12);color:#34d399}
+  .stat-card.cn .num{color:var(--cn)}.stat-card.cn .fine{background:rgba(211,47,47,.12);color:#ef5350}
+  .stat-card.jp .num{color:var(--jp)}.stat-card.jp .fine{background:rgba(123,31,162,.12);color:#BA68C8}
+  .stat-card.kr .num{color:var(--kr)}.stat-card.kr .fine{background:rgba(21,101,192,.12);color:#42A5F5}
+  .stat-card.us .num{color:var(--us)}.stat-card.us .fine{background:rgba(25,118,210,.12);color:#42A5F5}
+  .stat-card.br .num{color:var(--br)}.stat-card.br .fine{background:rgba(56,142,60,.12);color:#66BB6A}
+  .stat-card.gb .num{color:var(--gb)}.stat-card.gb .fine{background:rgba(92,107,192,.12);color:#9FA8DA}
+  .stat-card.ca .num{color:var(--ca)}.stat-card.ca .fine{background:rgba(0,121,107,.12);color:#80CBC4}
+  .stat-card.au .num{color:var(--au)}.stat-card.au .fine{background:rgba(245,124,0,.12);color:#FFB74D}
+  .stat-card.sg .num{color:var(--sg)}.stat-card.sg .fine{background:rgba(233,30,99,.12);color:#F48FB1}
+  .stat-card.my .num{color:var(--my)}.stat-card.my .fine{background:rgba(173,20,87,.12);color:#F06292}
+  .stat-card.th .num{color:var(--th)}.stat-card.th .fine{background:rgba(0,131,143,.12);color:#4DD0E1}
+  .stat-card.id .num{color:var(--id)}.stat-card.id .fine{background:rgba(255,111,0,.12);color:#FFB74D}
+  .stat-card.sa .num{color:var(--sa)}.stat-card.sa .fine{background:rgba(46,125,50,.12);color:#81C784}
+  .stat-card.ae .num{color:var(--ae)}.stat-card.ae .fine{background:rgba(0,105,92,.12);color:#80CBC4}
 
   .map-section{max-width:1200px;margin:30px auto;padding:0 20px;position:relative;z-index:1}
   .map-container{background:var(--card);backdrop-filter:blur(20px);border:1px solid var(--border);border-radius:20px;padding:30px;position:relative;overflow:hidden;box-shadow:0 4px 60px rgba(0,0,0,.2)}
@@ -50,11 +70,36 @@
   @keyframes ping{0%{transform:translate(-50%,-50%) scale(1);opacity:.7}75%,100%{transform:translate(-50%,-50%) scale(3);opacity:0}}
   .region-marker .region-label{position:absolute;top:-36px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:.78rem;font-weight:600;padding:5px 12px;border-radius:12px;pointer-events:none;backdrop-filter:blur(8px);transition:all .3s}
   .region-marker:hover .region-label{transform:translateX(-50%) translateY(-3px)}
+  .region-marker.label-bottom .region-label{top:auto;bottom:-36px}
+  .region-marker.label-left .region-label{top:50%;left:auto;right:28px;transform:translateY(-50%)}
+  .region-marker.label-left:hover .region-label{transform:translateY(-50%) translateX(-3px)}
+  .region-marker.label-right .region-label{top:50%;left:28px;transform:translateY(-50%)}
+  .region-marker.label-right:hover .region-label{transform:translateY(-50%) translateX(3px)}
+  .region-marker.label-top-right .region-label{top:-36px;left:auto;right:-10px;transform:none}
+  .region-marker.label-top-left .region-label{top:-36px;left:-10px;right:auto;transform:none}
+  .region-marker.label-bottom-right .region-label{top:auto;bottom:-36px;left:auto;right:-10px;transform:none}
+  .region-marker.label-bottom-left .region-label{top:auto;bottom:-36px;left:-10px;right:auto;transform:none}
+  .leader-line{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9}
+  .leader-line line{stroke-dasharray:4,3;opacity:.35;stroke-width:1.2}
 
   .marker-eu .pulse{background:var(--eu);color:var(--eu)}.marker-eu .pulse::after{background:var(--eu)}.marker-eu .region-label{background:rgba(99,102,241,.18);color:#a5b4fc;border:1px solid rgba(99,102,241,.35)}
   .marker-in .pulse{background:var(--in);color:var(--in)}.marker-in .pulse::after{background:var(--in)}.marker-in .region-label{background:rgba(245,158,11,.18);color:#fcd34d;border:1px solid rgba(245,158,11,.35)}
   .marker-ru .pulse{background:var(--ru);color:var(--ru)}.marker-ru .pulse::after{background:var(--ru)}.marker-ru .region-label{background:rgba(239,68,68,.18);color:#fca5a5;border:1px solid rgba(239,68,68,.35)}
   .marker-tr .pulse{background:var(--tr);color:var(--tr)}.marker-tr .pulse::after{background:var(--tr)}.marker-tr .region-label{background:rgba(16,185,129,.18);color:#6ee7b7;border:1px solid rgba(16,185,129,.35)}
+  .marker-cn .pulse{background:var(--cn);color:var(--cn)}.marker-cn .pulse::after{background:var(--cn)}.marker-cn .region-label{background:rgba(211,47,47,.18);color:#ef9a9a;border:1px solid rgba(211,47,47,.35)}
+  .marker-jp .pulse{background:var(--jp);color:var(--jp)}.marker-jp .pulse::after{background:var(--jp)}.marker-jp .region-label{background:rgba(123,31,162,.18);color:#CE93D8;border:1px solid rgba(123,31,162,.35)}
+  .marker-kr .pulse{background:var(--kr);color:var(--kr)}.marker-kr .pulse::after{background:var(--kr)}.marker-kr .region-label{background:rgba(21,101,192,.18);color:#90CAF9;border:1px solid rgba(21,101,192,.35)}
+  .marker-us .pulse{background:var(--us);color:var(--us)}.marker-us .pulse::after{background:var(--us)}.marker-us .region-label{background:rgba(25,118,210,.18);color:#90CAF9;border:1px solid rgba(25,118,210,.35)}
+  .marker-br .pulse{background:var(--br);color:var(--br)}.marker-br .pulse::after{background:var(--br)}.marker-br .region-label{background:rgba(56,142,60,.18);color:#A5D6A7;border:1px solid rgba(56,142,60,.35)}
+  .marker-gb .pulse{background:var(--gb);color:var(--gb)}.marker-gb .pulse::after{background:var(--gb)}.marker-gb .region-label{background:rgba(92,107,192,.18);color:#C5CAE9;border:1px solid rgba(92,107,192,.35)}
+  .marker-ca .pulse{background:var(--ca);color:var(--ca)}.marker-ca .pulse::after{background:var(--ca)}.marker-ca .region-label{background:rgba(0,121,107,.18);color:#B2DFDB;border:1px solid rgba(0,121,107,.35)}
+  .marker-au .pulse{background:var(--au);color:var(--au)}.marker-au .pulse::after{background:var(--au)}.marker-au .region-label{background:rgba(245,124,0,.18);color:#FFE0B2;border:1px solid rgba(245,124,0,.35)}
+  .marker-sg .pulse{background:var(--sg);color:var(--sg)}.marker-sg .pulse::after{background:var(--sg)}.marker-sg .region-label{background:rgba(233,30,99,.18);color:#F8BBD0;border:1px solid rgba(233,30,99,.35)}
+  .marker-my .pulse{background:var(--my);color:var(--my)}.marker-my .pulse::after{background:var(--my)}.marker-my .region-label{background:rgba(173,20,87,.18);color:#F48FB1;border:1px solid rgba(173,20,87,.35)}
+  .marker-th .pulse{background:var(--th);color:var(--th)}.marker-th .pulse::after{background:var(--th)}.marker-th .region-label{background:rgba(0,131,143,.18);color:#80DEEA;border:1px solid rgba(0,131,143,.35)}
+  .marker-id .pulse{background:var(--id);color:var(--id)}.marker-id .pulse::after{background:var(--id)}.marker-id .region-label{background:rgba(255,111,0,.18);color:#FFE0B2;border:1px solid rgba(255,111,0,.35)}
+  .marker-sa .pulse{background:var(--sa);color:var(--sa)}.marker-sa .pulse::after{background:var(--sa)}.marker-sa .region-label{background:rgba(46,125,50,.18);color:#A5D6A7;border:1px solid rgba(46,125,50,.35)}
+  .marker-ae .pulse{background:var(--ae);color:var(--ae)}.marker-ae .pulse::after{background:var(--ae)}.marker-ae .region-label{background:rgba(0,105,92,.18);color:#B2DFDB;border:1px solid rgba(0,105,92,.35)}
 
   .region-marker:hover .pulse{transform:scale(1.4);box-shadow:0 0 24px currentColor}
 
@@ -96,13 +141,24 @@
   .tl-filter-btn[data-region="in"].active{border-color:var(--in);background:rgba(245,158,11,.12);color:#fbbf24}
   .tl-filter-btn[data-region="ru"].active{border-color:var(--ru);background:rgba(239,68,68,.12);color:#f87171}
   .tl-filter-btn[data-region="tr"].active{border-color:var(--tr);background:rgba(16,185,129,.12);color:#34d399}
+  .tl-filter-btn[data-region="cn"].active{border-color:var(--cn);background:rgba(211,47,47,.12);color:#ef5350}
+  .tl-filter-btn[data-region="jp"].active{border-color:var(--jp);background:rgba(123,31,162,.12);color:#BA68C8}
+  .tl-filter-btn[data-region="kr"].active{border-color:var(--kr);background:rgba(21,101,192,.12);color:#42A5F5}
+  .tl-filter-btn[data-region="us"].active{border-color:var(--us);background:rgba(25,118,210,.12);color:#42A5F5}
+  .tl-filter-btn[data-region="br"].active{border-color:var(--br);background:rgba(56,142,60,.12);color:#66BB6A}
+  .tl-filter-btn[data-region="gb"].active{border-color:var(--gb);background:rgba(92,107,192,.12);color:#9FA8DA}
+  .tl-filter-btn[data-region="sg"].active{border-color:var(--sg);background:rgba(233,30,99,.12);color:#F48FB1}
+  .tl-filter-btn[data-region="th"].active{border-color:var(--th);background:rgba(0,131,143,.12);color:#4DD0E1}
+  .tl-filter-btn[data-region="id"].active{border-color:var(--id);background:rgba(255,111,0,.12);color:#FFB74D}
   .timeline{position:relative;padding-left:44px}
-  .timeline::before{content:'';position:absolute;left:16px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--eu),var(--in),var(--ru),var(--tr));opacity:.5}
+  .timeline::before{content:'';position:absolute;left:16px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--eu),var(--cn),var(--us),var(--in),var(--jp),var(--kr),var(--br),var(--gb),var(--ru),var(--tr));opacity:.5}
   .timeline-item{position:relative;margin-bottom:16px;padding:16px 20px;background:var(--card);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:14px;transition:all .3s cubic-bezier(.4,0,.2,1)}
   .timeline-item:hover{transform:translateX(6px);border-color:rgba(255,255,255,.1);box-shadow:0 4px 24px rgba(0,0,0,.2)}
   .timeline-item::before{content:'';position:absolute;left:-36px;top:22px;width:14px;height:14px;border-radius:50%;border:3px solid var(--bg);transition:all .3s}
   .timeline-item:hover::before{transform:scale(1.2)}
   .timeline-item.tl-eu::before{background:var(--eu);box-shadow:0 0 8px var(--eu)}.timeline-item.tl-in::before{background:var(--in);box-shadow:0 0 8px var(--in)}.timeline-item.tl-ru::before{background:var(--ru);box-shadow:0 0 8px var(--ru)}.timeline-item.tl-tr::before{background:var(--tr);box-shadow:0 0 8px var(--tr)}
+  .timeline-item.tl-cn::before{background:var(--cn);box-shadow:0 0 8px var(--cn)}.timeline-item.tl-jp::before{background:var(--jp);box-shadow:0 0 8px var(--jp)}.timeline-item.tl-kr::before{background:var(--kr);box-shadow:0 0 8px var(--kr)}.timeline-item.tl-us::before{background:var(--us);box-shadow:0 0 8px var(--us)}
+  .timeline-item.tl-br::before{background:var(--br);box-shadow:0 0 8px var(--br)}.timeline-item.tl-gb::before{background:var(--gb);box-shadow:0 0 8px var(--gb)}.timeline-item.tl-sg::before{background:var(--sg);box-shadow:0 0 8px var(--sg)}.timeline-item.tl-th::before{background:var(--th);box-shadow:0 0 8px var(--th)}.timeline-item.tl-id::before{background:var(--id);box-shadow:0 0 8px var(--id)}
   .timeline-item .tl-date{font-size:.75rem;color:var(--text-dim);margin-bottom:4px;font-family:monospace;letter-spacing:.5px}
   .timeline-item .tl-title{font-size:.92rem;font-weight:700}
   .timeline-item .tl-desc{font-size:.8rem;color:var(--text-dim);margin-top:5px;line-height:1.55}
@@ -111,6 +167,15 @@
   .tl-tag-in{background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.2)}
   .tl-tag-ru{background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.2)}
   .tl-tag-tr{background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.2)}
+  .tl-tag-cn{background:rgba(211,47,47,.12);color:#ef5350;border:1px solid rgba(211,47,47,.2)}
+  .tl-tag-jp{background:rgba(123,31,162,.12);color:#BA68C8;border:1px solid rgba(123,31,162,.2)}
+  .tl-tag-kr{background:rgba(21,101,192,.12);color:#42A5F5;border:1px solid rgba(21,101,192,.2)}
+  .tl-tag-us{background:rgba(25,118,210,.12);color:#42A5F5;border:1px solid rgba(25,118,210,.2)}
+  .tl-tag-br{background:rgba(56,142,60,.12);color:#66BB6A;border:1px solid rgba(56,142,60,.2)}
+  .tl-tag-gb{background:rgba(92,107,192,.12);color:#9FA8DA;border:1px solid rgba(92,107,192,.2)}
+  .tl-tag-sg{background:rgba(233,30,99,.12);color:#F48FB1;border:1px solid rgba(233,30,99,.2)}
+  .tl-tag-th{background:rgba(0,131,143,.12);color:#4DD0E1;border:1px solid rgba(0,131,143,.2)}
+  .tl-tag-id{background:rgba(255,111,0,.12);color:#FFB74D;border:1px solid rgba(255,111,0,.2)}
   .timeline-item.hidden{display:none}
 
   .overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);z-index:999;opacity:0;pointer-events:none;transition:opacity .3s}
@@ -136,8 +201,9 @@
 
   .progress-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--eu),var(--accent),var(--tr));z-index:600;transition:width .1s;width:0}
 
+  @media(max-width:1200px){.dashboard{grid-template-columns:repeat(4,1fr)}}
   @media(max-width:900px){
-    .dashboard{grid-template-columns:repeat(2,1fr);gap:12px}
+    .dashboard{grid-template-columns:repeat(3,1fr);gap:12px}
     .detail-panel{width:100%;right:-100%}
     .header h1{font-size:1.8rem}
     .nav{display:none}
@@ -181,7 +247,7 @@
 <div class="header" id="dashboard">
   <h1>🌍 全球隐私合规地图</h1>
   <p>海外应用隐私政策合规可视化看板</p>
-  <span class="update-tag">📅 数据更新：2026-05-21</span>
+  <span class="update-tag">📅 数据更新：2026-06-09</span>
 </div>
 
 <div class="dashboard">
@@ -209,6 +275,78 @@
     <div class="label">KVKK + 社媒法</div>
     <div class="fine">TRY 180万</div>
   </div>
+  <div class="stat-card cn" onclick="openPanel('cn')">
+    <span class="flag">🇨🇳</span>
+    <div class="num">CN</div>
+    <div class="label">PIPL + DSL + 数据安全法</div>
+    <div class="fine">¥5000万 / 5%</div>
+  </div>
+  <div class="stat-card jp" onclick="openPanel('jp')">
+    <span class="flag">🇯🇵</span>
+    <div class="num">JP</div>
+    <div class="label">APPI 2022 修正</div>
+    <div class="fine">¥1亿</div>
+  </div>
+  <div class="stat-card kr" onclick="openPanel('kr')">
+    <span class="flag">🇰🇷</span>
+    <div class="num">KR</div>
+    <div class="label">PIPA 修正案</div>
+    <div class="fine">3% 营收</div>
+  </div>
+  <div class="stat-card us" onclick="openPanel('us')">
+    <span class="flag">🇺🇸</span>
+    <div class="num">US</div>
+    <div class="label">CCPA/CPRA + 州法</div>
+    <div class="fine">$7,500/次</div>
+  </div>
+  <div class="stat-card br" onclick="openPanel('br')">
+    <span class="flag">🇧🇷</span>
+    <div class="num">BR</div>
+    <div class="label">LGPD</div>
+    <div class="fine">R$5000万 / 2%</div>
+  </div>
+  <div class="stat-card gb" onclick="openPanel('gb')">
+    <span class="flag">🇬🇧</span>
+    <div class="num">UK</div>
+    <div class="label">UK GDPR + DPA 2018</div>
+    <div class="fine">£1750万 / 4%</div>
+  </div>
+  <div class="stat-card sg" onclick="openPanel('sg')">
+    <span class="flag">🇸🇬</span>
+    <div class="num">SG</div>
+    <div class="label">PDPA</div>
+    <div class="fine">S$100万</div>
+  </div>
+  <div class="stat-card th" onclick="openPanel('th')">
+    <span class="flag">🇹🇭</span>
+    <div class="num">TH</div>
+    <div class="label">PDPA</div>
+    <div class="fine">฿700万</div>
+  </div>
+  <div class="stat-card id" onclick="openPanel('id')">
+    <span class="flag">🇮🇩</span>
+    <div class="num">ID</div>
+    <div class="label">PDP Law</div>
+    <div class="fine">¥70亿 / 2%</div>
+  </div>
+  <div class="stat-card au" onclick="openPanel('au')">
+    <span class="flag">🇦🇺</span>
+    <div class="num">AU</div>
+    <div class="label">Privacy Act</div>
+    <div class="fine">A$5000万</div>
+  </div>
+  <div class="stat-card sa" onclick="openPanel('sa')">
+    <span class="flag">🇸🇦</span>
+    <div class="num">SA</div>
+    <div class="label">PDPL</div>
+    <div class="fine">SAR 1500万</div>
+  </div>
+  <div class="stat-card my" onclick="openPanel('my')">
+    <span class="flag">🇲🇾</span>
+    <div class="num">MY</div>
+    <div class="label">PDPA 修正</div>
+    <div class="fine">RM1000万</div>
+  </div>
 </div>
 
 <div class="map-section" id="map">
@@ -227,18 +365,28 @@
           <radialGradient id="glow-in" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f59e0b" stop-opacity=".35"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/></radialGradient>
           <radialGradient id="glow-ru" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ef4444" stop-opacity=".35"/><stop offset="100%" stop-color="#ef4444" stop-opacity="0"/></radialGradient>
           <radialGradient id="glow-tr" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#10b981" stop-opacity=".35"/><stop offset="100%" stop-color="#10b981" stop-opacity="0"/></radialGradient>
+          <radialGradient id="glow-cn" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#D32F2F" stop-opacity=".35"/><stop offset="100%" stop-color="#D32F2F" stop-opacity="0"/></radialGradient>
+          <radialGradient id="glow-jp" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#7B1FA2" stop-opacity=".35"/><stop offset="100%" stop-color="#7B1FA2" stop-opacity="0"/></radialGradient>
+          <radialGradient id="glow-kr" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#1565C0" stop-opacity=".35"/><stop offset="100%" stop-color="#1565C0" stop-opacity="0"/></radialGradient>
+          <radialGradient id="glow-us" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#1976D2" stop-opacity=".35"/><stop offset="100%" stop-color="#1976D2" stop-opacity="0"/></radialGradient>
+          <radialGradient id="glow-br" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#388E3C" stop-opacity=".35"/><stop offset="100%" stop-color="#388E3C" stop-opacity="0"/></radialGradient>
+          <radialGradient id="glow-gb" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#5C6BC0" stop-opacity=".35"/><stop offset="100%" stop-color="#5C6BC0" stop-opacity="0"/></radialGradient>
+          <radialGradient id="glow-sg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#E91E63" stop-opacity=".35"/><stop offset="100%" stop-color="#E91E63" stop-opacity="0"/></radialGradient>
+          <radialGradient id="glow-th" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#00838F" stop-opacity=".35"/><stop offset="100%" stop-color="#00838F" stop-opacity="0"/></radialGradient>
+          <radialGradient id="glow-id" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#FF6F00" stop-opacity=".35"/><stop offset="100%" stop-color="#FF6F00" stop-opacity="0"/></radialGradient>
+          <radialGradient id="glow-au" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#F57C00" stop-opacity=".35"/><stop offset="100%" stop-color="#F57C00" stop-opacity="0"/></radialGradient>
         </defs>
 
         <!-- World map (Equirectangular projection, simplified outlines) -->
         <g fill="#1e293b" stroke="#2d3a4a" stroke-width=".5">
           <!-- North America -->
-          <path d="M50,65 L70,55 L100,50 L140,48 L175,55 L200,65 L215,80 L225,100 L230,120 L225,140 L220,155 L210,170 L195,180 L180,185 L165,180 L155,170 L145,165 L130,155 L115,145 L100,140 L85,130 L70,115 L55,100 L45,85 Z"/>
-          <path d="M55,140 L65,135 L80,140 L90,155 L95,175 L90,195 L80,210 L65,215 L50,205 L45,185 L48,165 Z"/>
+          <path d="M50,65 L70,55 L100,50 L140,48 L175,55 L200,65 L215,80 L225,100 L230,120 L225,140 L220,155 L210,170 L195,180 L180,185 L165,180 L155,170 L145,165 L130,155 L115,145 L100,140 L85,130 L70,115 L55,100 L45,85 Z" fill="#1a2a3a" stroke="#1976D2" stroke-width="1" opacity=".7"/>
+          <path d="M55,140 L65,135 L80,140 L90,155 L95,175 L90,195 L80,210 L65,215 L50,205 L45,185 L48,165 Z" fill="#1a2a3a" stroke="#1976D2" stroke-width="1" opacity=".5"/>
           <!-- Greenland -->
           <path d="M280,30 L310,25 L335,30 L340,50 L330,65 L310,70 L290,60 L280,45 Z"/>
 
           <!-- South America -->
-          <path d="M175,225 L195,220 L215,225 L230,240 L240,260 L245,285 L240,310 L235,335 L225,355 L215,370 L200,380 L190,375 L180,360 L175,340 L170,315 L168,290 L170,260 L172,240 Z"/>
+          <path d="M175,225 L195,220 L215,225 L230,240 L240,260 L245,285 L240,310 L235,335 L225,355 L215,370 L200,380 L190,375 L180,360 L175,340 L170,315 L168,290 L170,260 L172,240 Z" fill="#1a2a1a" stroke="#388E3C" stroke-width="1" opacity=".7"/>
 
           <!-- Europe (highlighted) -->
           <path d="M472,80 L480,70 L495,65 L510,68 L525,72 L540,78 L555,85 L565,95 L570,108 L568,120 L560,130 L550,138 L540,145 L528,150 L515,153 L500,150 L490,145 L480,140 L475,130 L472,118 L470,105 L471,90 Z" fill="#2a2050" stroke="#6366f1" stroke-width="1.2" opacity=".7"/>
@@ -271,24 +419,24 @@
           <!-- Central Asia -->
           <path d="M620,108 L650,105 L680,110 L700,118 L690,125 L670,122 L650,120 L630,118 Z"/>
 
-          <!-- East Asia (China, Mongolia) -->
-          <path d="M700,80 L730,75 L760,78 L790,85 L810,95 L820,108 L815,125 L800,138 L780,145 L760,148 L740,145 L725,140 L715,130 L710,118 L705,105 L700,92 Z"/>
-          <!-- Japan -->
-          <path d="M830,100 L835,95 L840,100 L842,112 L838,120 L833,115 L830,108 Z"/>
-          <!-- Korean Peninsula -->
-          <path d="M815,105 L820,100 L823,108 L820,115 L816,112 Z"/>
+          <!-- East Asia (China, Mongolia) - China highlighted -->
+          <path d="M700,80 L730,75 L760,78 L790,85 L810,95 L820,108 L815,125 L800,138 L780,145 L760,148 L740,145 L725,140 L715,130 L710,118 L705,105 L700,92 Z" fill="#3a1a1a" stroke="#D32F2F" stroke-width="1.2" opacity=".7"/>
+          <!-- Japan (highlighted) -->
+          <path d="M830,100 L835,95 L840,100 L842,112 L838,120 L833,115 L830,108 Z" fill="#2a1a3a" stroke="#7B1FA2" stroke-width="1.2" opacity=".7"/>
+          <!-- Korean Peninsula (highlighted) -->
+          <path d="M815,105 L820,100 L823,108 L820,115 L816,112 Z" fill="#1a2a3a" stroke="#1565C0" stroke-width="1.2" opacity=".7"/>
 
           <!-- Southeast Asia -->
           <path d="M745,175 L765,170 L785,175 L800,185 L805,200 L800,215 L790,225 L775,230 L760,225 L750,215 L745,200 L743,188 Z"/>
-          <!-- Indonesia -->
-          <path d="M780,245 L800,240 L820,242 L840,248 L850,255 L845,262 L830,265 L810,262 L795,258 L782,252 Z"/>
+          <!-- Indonesia (highlighted) -->
+          <path d="M780,245 L800,240 L820,242 L840,248 L850,255 L845,262 L830,265 L810,262 L795,258 L782,252 Z" fill="#3a2a0a" stroke="#FF6F00" stroke-width="1.2" opacity=".7"/>
           <!-- Philippines -->
           <path d="M820,195 L825,190 L828,198 L825,208 L820,205 Z"/>
-          <!-- Malaysia -->
-          <path d="M775,235 L785,232 L790,238 L785,245 L778,242 Z"/>
+          <!-- Malaysia & Singapore (highlighted) -->
+          <path d="M775,235 L785,232 L790,238 L785,245 L778,242 Z" fill="#2a1a2a" stroke="#E91E63" stroke-width="1" opacity=".7"/>
 
-          <!-- Australia -->
-          <path d="M814,310 L840,305 L870,308 L895,315 L910,328 L915,345 L908,360 L895,370 L875,375 L855,372 L835,365 L820,352 L812,338 L810,322 Z"/>
+          <!-- Australia (highlighted) -->
+          <path d="M814,310 L840,305 L870,308 L895,315 L910,328 L915,345 L908,360 L895,370 L875,375 L855,372 L835,365 L820,352 L812,338 L810,322 Z" fill="#3a2a0a" stroke="#F57C00" stroke-width="1.2" opacity=".7"/>
           <!-- New Zealand -->
           <path d="M935,355 L940,350 L943,358 L940,368 L936,365 Z"/>
           <path d="M938,370 L942,367 L944,375 L941,382 L937,378 Z"/>
@@ -333,6 +481,13 @@
         <ellipse cx="770" cy="75" rx="200" ry="45" fill="url(#glow-ru)"/>
         <ellipse cx="598" cy="139" rx="30" ry="15" fill="url(#glow-tr)"/>
         <ellipse cx="730" cy="188" rx="45" ry="45" fill="url(#glow-in)"/>
+        <ellipse cx="755" cy="118" rx="55" ry="35" fill="url(#glow-cn)"/>
+        <ellipse cx="835" cy="108" rx="15" ry="15" fill="url(#glow-jp)"/>
+        <ellipse cx="820" cy="108" rx="12" ry="12" fill="url(#glow-kr)"/>
+        <ellipse cx="130" cy="130" rx="80" ry="60" fill="url(#glow-us)"/>
+        <ellipse cx="210" cy="300" rx="50" ry="60" fill="url(#glow-br)"/>
+        <ellipse cx="850" cy="340" rx="50" ry="35" fill="url(#glow-au)"/>
+        <ellipse cx="780" cy="238" rx="40" ry="15" fill="url(#glow-id)"/>
 
         <!-- Country labels on map -->
         <g font-size="8" font-weight="600" font-family="'Segoe UI',sans-serif" opacity=".7">
@@ -340,37 +495,125 @@
           <text x="740" y="72" fill="#f87171">RUSSIA</text>
           <text x="588" y="143" fill="#34d399">TR</text>
           <text x="718" y="185" fill="#fbbf24">IN</text>
+          <text x="740" y="115" fill="#ef9a9a">CN</text>
+          <text x="843" y="105" fill="#CE93D8">JP</text>
+          <text x="810" y="100" fill="#90CAF9">KR</text>
+          <text x="100" y="125" fill="#90CAF9">US</text>
+          <text x="195" y="295" fill="#A5D6A7">BR</text>
+          <text x="462" y="83" fill="#C5CAE9">UK</text>
+          <text x="855" y="338" fill="#FFE0B2">AU</text>
+          <text x="795" y="252" fill="#FFE0B2">ID</text>
+          <text x="765" y="237" fill="#F8BBD0">SG</text>
+          <text x="0" y="285" fill="#80DEEA">TH</text>
+        </g>
+
+        <!-- Cluster boundary ellipses -->
+        <ellipse cx="800" cy="110" rx="65" ry="40" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1" stroke-dasharray="6,4"/>
+        <text x="830" y="70" fill="rgba(255,255,255,.2)" font-size="7" font-family="'Segoe UI',sans-serif">东亚区</text>
+        <ellipse cx="790" cy="235" rx="50" ry="30" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1" stroke-dasharray="6,4"/>
+        <text x="810" y="205" fill="rgba(255,255,255,.2)" font-size="7" font-family="'Segoe UI',sans-serif">东南亚区</text>
+        <ellipse cx="515" cy="100" rx="40" ry="30" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1" stroke-dasharray="6,4"/>
+        <text x="510" y="68" fill="rgba(255,255,255,.2)" font-size="7" font-family="'Segoe UI',sans-serif">欧洲区</text>
+
+        <!-- Leader lines from markers to geographic positions -->
+        <g stroke-dasharray="4,3" stroke-width="1" fill="none" opacity=".3">
+          <!-- RU: marker(75%,13%→720,65) to geo(750,78) -->
+          <line x1="720" y1="65" x2="750" y2="78" stroke="#ef4444"/>
+          <!-- CN: marker(74%,26%→710,130) to geo(755,118) -->
+          <line x1="710" y1="130" x2="755" y2="118" stroke="#D32F2F"/>
+          <!-- JP: marker(86%,19%→826,95) to geo(835,108) -->
+          <line x1="826" y1="95" x2="835" y2="108" stroke="#7B1FA2"/>
+          <!-- KR: marker(82%,14.5%→787,73) to geo(820,108) -->
+          <line x1="787" y1="73" x2="820" y2="108" stroke="#1565C0"/>
+          <!-- GB: marker(45%,15%→432,75) to geo(495,90) -->
+          <line x1="432" y1="75" x2="495" y2="90" stroke="#5C6BC0"/>
+          <!-- IN: marker(71.7%,38.3%→688,192) to geo(730,188) -->
+          <line x1="688" y1="192" x2="730" y2="188" stroke="#f59e0b"/>
+          <!-- TH: marker(74%,44%→710,220) to geo(778,220) -->
+          <line x1="710" y1="220" x2="778" y2="220" stroke="#00838F"/>
+          <!-- SG: marker(80%,48%→768,240) to geo(790,248) -->
+          <line x1="768" y1="240" x2="790" y2="248" stroke="#E91E63"/>
+          <!-- ID: marker(86%,53%→826,265) to geo(815,255) -->
+          <line x1="826" y1="265" x2="815" y2="255" stroke="#FF6F00"/>
+          <!-- BR: marker(22%,58%→211,290) to geo(210,300) -->
+          <line x1="211" y1="290" x2="210" y2="300" stroke="#388E3C"/>
         </g>
       </svg>
 
-      <!-- Region Markers (positioned using equirectangular coords) -->
-      <!-- EU center ~10°E, 50°N → x:528, y:111 → 52.8%, 22.2% -->
+      <!-- Region Markers (label positions varied to avoid overlap) -->
       <div class="region-marker marker-eu" style="left:52.8%;top:22.2%" onclick="openPanel('eu')">
-        <div class="region-label">🇪🇺 欧盟 GDPR + AI Act</div>
+        <div class="region-label">🇪🇺 欧盟 GDPR</div>
         <div class="pulse"></div>
       </div>
-      <!-- Russia center ~90°E, 62°N → x:750, y:78 → 75%, 15.6% -->
-      <div class="region-marker marker-ru" style="left:75%;top:15.6%" onclick="openPanel('ru')">
+      <div class="region-marker marker-ru label-top-right" style="left:75%;top:13%" onclick="openPanel('ru')">
         <div class="region-label">🇷🇺 俄罗斯 152-FZ</div>
         <div class="pulse"></div>
       </div>
-      <!-- Turkey center ~35°E, 39°N → x:597, y:142 → 59.7%, 28.3% -->
-      <div class="region-marker marker-tr" style="left:59.7%;top:28.3%" onclick="openPanel('tr')">
+      <div class="region-marker marker-tr label-bottom" style="left:59.7%;top:28.3%" onclick="openPanel('tr')">
         <div class="region-label">🇹🇷 土耳其 KVKK</div>
         <div class="pulse"></div>
       </div>
-      <!-- India center ~78°E, 21°N → x:717, y:192 → 71.7%, 38.3% -->
-      <div class="region-marker marker-in" style="left:71.7%;top:38.3%" onclick="openPanel('in')">
+      <div class="region-marker marker-in label-left" style="left:71.7%;top:38.3%" onclick="openPanel('in')">
         <div class="region-label">🇮🇳 印度 DPDP</div>
+        <div class="pulse"></div>
+      </div>
+      <div class="region-marker marker-cn label-bottom-left" style="left:74%;top:26%" onclick="openPanel('cn')">
+        <div class="region-label">🇨🇳 中国 PIPL</div>
+        <div class="pulse"></div>
+      </div>
+      <div class="region-marker marker-jp label-right" style="left:86%;top:19%" onclick="openPanel('jp')">
+        <div class="region-label">🇯🇵 日本 APPI</div>
+        <div class="pulse"></div>
+      </div>
+      <div class="region-marker marker-kr label-top-right" style="left:82%;top:14.5%" onclick="openPanel('kr')">
+        <div class="region-label">🇰🇷 韩国 PIPA</div>
+        <div class="pulse"></div>
+      </div>
+      <div class="region-marker marker-us" style="left:13%;top:28%" onclick="openPanel('us')">
+        <div class="region-label">🇺🇸 美国 CCPA</div>
+        <div class="pulse"></div>
+      </div>
+      <div class="region-marker marker-br label-bottom" style="left:22%;top:58%" onclick="openPanel('br')">
+        <div class="region-label">🇧🇷 巴西 LGPD</div>
+        <div class="pulse"></div>
+      </div>
+      <div class="region-marker marker-gb label-top-left" style="left:45%;top:15%" onclick="openPanel('gb')">
+        <div class="region-label">🇬🇧 英国 UK GDPR</div>
+        <div class="pulse"></div>
+      </div>
+      <div class="region-marker marker-sg label-right" style="left:80%;top:48%" onclick="openPanel('sg')">
+        <div class="region-label">🇸🇬 新加坡 PDPA</div>
+        <div class="pulse"></div>
+      </div>
+      <div class="region-marker marker-th label-left" style="left:74%;top:44%" onclick="openPanel('th')">
+        <div class="region-label">🇹🇭 泰国 PDPA</div>
+        <div class="pulse"></div>
+      </div>
+      <div class="region-marker marker-id label-bottom-right" style="left:86%;top:53%" onclick="openPanel('id')">
+        <div class="region-label">🇮🇩 印尼 PDP</div>
+        <div class="pulse"></div>
+      </div>
+      <div class="region-marker marker-au label-bottom" style="left:87%;top:65%" onclick="openPanel('au')">
+        <div class="region-label">🇦🇺 澳大利亚</div>
         <div class="pulse"></div>
       </div>
     </div>
 
     <div class="legend">
-      <div class="legend-item"><div class="dot" style="background:var(--eu)"></div>欧盟 GDPR + AI Act</div>
-      <div class="legend-item"><div class="dot" style="background:var(--in)"></div>印度 DPDP Act</div>
+      <div class="legend-item"><div class="dot" style="background:var(--eu)"></div>欧盟 GDPR</div>
+      <div class="legend-item"><div class="dot" style="background:var(--cn)"></div>中国 PIPL</div>
+      <div class="legend-item"><div class="dot" style="background:var(--us)"></div>美国 CCPA</div>
+      <div class="legend-item"><div class="dot" style="background:var(--in)"></div>印度 DPDP</div>
+      <div class="legend-item"><div class="dot" style="background:var(--jp)"></div>日本 APPI</div>
+      <div class="legend-item"><div class="dot" style="background:var(--kr)"></div>韩国 PIPA</div>
+      <div class="legend-item"><div class="dot" style="background:var(--br)"></div>巴西 LGPD</div>
+      <div class="legend-item"><div class="dot" style="background:var(--gb)"></div>英国 UK GDPR</div>
       <div class="legend-item"><div class="dot" style="background:var(--ru)"></div>俄罗斯 152-FZ</div>
       <div class="legend-item"><div class="dot" style="background:var(--tr)"></div>土耳其 KVKK</div>
+      <div class="legend-item"><div class="dot" style="background:var(--sg)"></div>新加坡 PDPA</div>
+      <div class="legend-item"><div class="dot" style="background:var(--th)"></div>泰国 PDPA</div>
+      <div class="legend-item"><div class="dot" style="background:var(--id)"></div>印尼 PDP</div>
+      <div class="legend-item"><div class="dot" style="background:var(--au)"></div>澳大利亚</div>
     </div>
   </div>
 </div>
@@ -380,9 +623,18 @@
   <div class="timeline-filters">
     <button class="tl-filter-btn active" data-region="all" onclick="filterTimeline('all')">全部</button>
     <button class="tl-filter-btn" data-region="eu" onclick="filterTimeline('eu')">🇪🇺 欧盟</button>
+    <button class="tl-filter-btn" data-region="cn" onclick="filterTimeline('cn')">🇨🇳 中国</button>
+    <button class="tl-filter-btn" data-region="us" onclick="filterTimeline('us')">🇺🇸 美国</button>
     <button class="tl-filter-btn" data-region="in" onclick="filterTimeline('in')">🇮🇳 印度</button>
+    <button class="tl-filter-btn" data-region="jp" onclick="filterTimeline('jp')">🇯🇵 日本</button>
+    <button class="tl-filter-btn" data-region="kr" onclick="filterTimeline('kr')">🇰🇷 韩国</button>
+    <button class="tl-filter-btn" data-region="br" onclick="filterTimeline('br')">🇧🇷 巴西</button>
+    <button class="tl-filter-btn" data-region="gb" onclick="filterTimeline('gb')">🇬🇧 英国</button>
     <button class="tl-filter-btn" data-region="ru" onclick="filterTimeline('ru')">🇷🇺 俄罗斯</button>
     <button class="tl-filter-btn" data-region="tr" onclick="filterTimeline('tr')">🇹🇷 土耳其</button>
+    <button class="tl-filter-btn" data-region="sg" onclick="filterTimeline('sg')">🇸🇬 新加坡</button>
+    <button class="tl-filter-btn" data-region="th" onclick="filterTimeline('th')">🇹🇭 泰国</button>
+    <button class="tl-filter-btn" data-region="id" onclick="filterTimeline('id')">🇮🇩 印尼</button>
   </div>
   <div class="timeline">
     <div class="timeline-item tl-in">
@@ -427,6 +679,60 @@
       <div class="tl-desc">议会通过法案，禁止 15 岁以下注册社交媒体账号，平台须部署年龄核验系统，待总统签署后 6 个月生效</div>
       <span class="tl-tag tl-tag-tr">土耳其</span>
     </div>
+    <div class="timeline-item tl-br">
+      <div class="tl-date">2026-05-12</div>
+      <div class="tl-title">🇧🇷 巴西 ANPD 发布平台监控新法令</div>
+      <div class="tl-desc">ANPD 发布关于平台监控、生物识别数据处理和儿童数据保护的新法令草案，加强 LGPD 执行力度</div>
+      <span class="tl-tag tl-tag-br">巴西</span>
+    </div>
+    <div class="timeline-item tl-us">
+      <div class="tl-date">2026-01-01</div>
+      <div class="tl-title">🇺🇸 美国多州隐私法生效</div>
+      <div class="tl-desc">Delaware、New Hampshire、New Jersey、Nebraska、Kentucky 等州隐私法陆续生效，CCPA/CPRA 持续强化执法</div>
+      <span class="tl-tag tl-tag-us">美国</span>
+    </div>
+    <div class="timeline-item tl-cn">
+      <div class="tl-date">2025-01-01</div>
+      <div class="tl-title">🇨🇳 中国《网络数据安全管理条例》生效</div>
+      <div class="tl-desc">细化数据分类分级管理要求，明确跨境数据传输"三条通道"机制，PIPL + DSL + 数据安全法三法框架全面落地</div>
+      <span class="tl-tag tl-tag-cn">中国</span>
+    </div>
+    <div class="timeline-item tl-kr">
+      <div class="tl-date">2025-09-30</div>
+      <div class="tl-title">🇰🇷 韩国 PIPA 修正案生效</div>
+      <div class="tl-desc">强化跨境数据传输规则，明确合法性基础和用户同意要求，PIPC 对 Meta 等开出大额罚单</div>
+      <span class="tl-tag tl-tag-kr">韩国</span>
+    </div>
+    <div class="timeline-item tl-jp">
+      <div class="tl-date">2025-04-01</div>
+      <div class="tl-title">🇯🇵 日本 APPI 执法持续加强</div>
+      <div class="tl-desc">PPC 对未及时通报数据泄露的企业加强处罚，跨境数据传输和 AI 数据使用合规审查趋严</div>
+      <span class="tl-tag tl-tag-jp">日本</span>
+    </div>
+    <div class="timeline-item tl-gb">
+      <div class="tl-date">2025-06-01</div>
+      <div class="tl-title">🇬🇧 英国 ICO 推出 AI 框架</div>
+      <div class="tl-desc">信息专员办公室发布 AI 与数据保护指南，要求 AI 系统遵循 UK GDPR 合法性基础和透明度要求</div>
+      <span class="tl-tag tl-tag-gb">英国</span>
+    </div>
+    <div class="timeline-item tl-th">
+      <div class="tl-date">2025-06-01</div>
+      <div class="tl-title">🇹🇭 泰国 PDPA 执法进入实质阶段</div>
+      <div class="tl-desc">PDPC 对未合规企业开出处罚，要求强制数据泄露通知（72 小时）、DPO 任命、跨境传输影响评估</div>
+      <span class="tl-tag tl-tag-th">泰国</span>
+    </div>
+    <div class="timeline-item tl-id">
+      <div class="tl-date">2025-10-01</div>
+      <div class="tl-title">🇮🇩 印尼 PDP Law 全面执行</div>
+      <div class="tl-desc">政府数据保护机构全面运作，开始审查跨境传输充分性，公共部门数据本地化要求执行</div>
+      <span class="tl-tag tl-tag-id">印尼</span>
+    </div>
+    <div class="timeline-item tl-sg">
+      <div class="tl-date">2025-03-01</div>
+      <div class="tl-title">🇸🇬 新加坡 PDPA 持续强化</div>
+      <div class="tl-desc">PDPC 开展全国数据保护意识活动，加强对 AI 数据使用的合规要求，跨境传输充分性评估持续推进</div>
+      <span class="tl-tag tl-tag-sg">新加坡</span>
+    </div>
     <div class="timeline-item tl-eu">
       <div class="tl-date">2026-08-02</div>
       <div class="tl-title">🇪🇺 AI Act 透明度义务生效</div>
@@ -460,7 +766,7 @@
 
 <div class="footer">
   <p>免责声明：本看板仅供参考，不构成法律建议。建议结合业务实际情况咨询专业隐私法律顾问。</p>
-  <p style="margin-top:6px">数据来源：欧盟官方公报、印度 MEITY、俄罗斯 Roskomnadzor、土耳其 KVKK、新华社 | 更新于 2026-05-21</p>
+  <p style="margin-top:6px">数据来源：欧盟官方公报、印度 MEITY、俄罗斯 Roskomnadzor、土耳其 KVKK、中国网信办、日本 PPC、韩国 PIPC、美国 FTC/CPPA、巴西 ANPD、英国 ICO、新加坡 PDPC、泰国 PDPC、印尼 Komdigi、澳大利亚 OAIC、马来西亚 PDPC | 更新于 2026-06-09</p>
 </div>
 
 <script>
@@ -504,6 +810,203 @@ const panels = {
         <div class="check-item"><div class="status done">✓</div><div class="text">72 小时内向监管机构报告</div></div>
         <div class="check-item"><div class="status done">✓</div><div class="text">高风险泄露需通知受影响用户</div></div>
         <div class="check-item"><div class="status done">✓</div><div class="text">维护数据泄露登记簿</div></div>
+      </div>
+    `
+  },
+  gb: {
+    title: '<span class="dot" style="background:var(--gb)"></span> 英国 UK GDPR + DPA 2018',
+    content: `
+      <div class="fine-card">
+        <div class="fine-amount">£17,500,000 或全球营收 4%</div>
+        <div class="fine-desc">UK GDPR 最高罚款 | 与 EU GDPR 结构一致</div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">📋</span> 核心要求</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">GDPR 基本原则和数据主体权利与 EU GDPR 一致</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">ICO 独立监管，有权开出高额罚款</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">DPA 2018 补充 UK 特定执法和豁免条款</div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🤖</span> AI 与数据保护（2025-2026）</h3>
+        <div class="check-item"><div class="status new">!</div><div class="text">ICO 发布 AI 与数据保护指南 <span class="tag tag-2026">2025</span></div></div>
+        <div class="check-item"><div class="status new">!</div><div class="text">AI 系统须遵循 UK GDPR 合法性基础和透明度要求</div></div>
+        <div class="check-item"><div class="status new">!</div><div class="text">UK AI Safety Institute 持续评估 AI 风险</div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🌐</span> 跨境传输</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">脱欧后制定独立充分性认定清单</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">使用 International Data Transfer Agreement（IDTA）</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">UK Addendum 可与 EU SCC 配合使用</div></div>
+      </div>
+    `
+  },
+  sg: {
+    title: '<span class="dot" style="background:var(--sg)"></span> 新加坡 PDPA（个人数据保护法）',
+    content: `
+      <div class="fine-card">
+        <div class="fine-amount">S$1,000,000（约 74 万美元）</div>
+        <div class="fine-desc">PDPA 最高罚款 | 2020 年修正后取消上限，按营收比例计算</div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">📋</span> 同意与数据处理</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">获取个人数据须告知目的并获得同意</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">须在合理时间内、便捷方式下允许撤回同意</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">13 岁以下儿童须获得监护人同意</div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🌐</span> 跨境传输</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">无通用数据本地化要求</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">跨境传输须确保接收国提供同等保护</div></div>
+        <div class="check-item"><div class="status new">!</div><div class="text">PDPC 持续审查跨境传输充分性 <span class="tag tag-2026">强化</span></div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🛡️</span> 执法趋势</h3>
+        <div class="check-item"><div class="status new">!</div><div class="text">PDPC 加强对 AI 数据使用的合规审查 <span class="tag tag-2026">2026</span></div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">数据泄露须在 3 个日历日内通知 PDPC</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">2021 年起取消罚款金额上限，按营收比例</div></div>
+      </div>
+    `
+  },
+  th: {
+    title: '<span class="dot" style="background:var(--th)"></span> 泰国 PDPA（个人数据保护法）',
+    content: `
+      <div class="fine-card">
+        <div class="fine-amount">฿7,000,000（约 20 万美元）</div>
+        <div class="fine-desc">PDPA 最高罚款 | 刑事处罚可监禁 1 年</div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">📋</span> 同意与数据处理</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">须在数据处理前获取明确同意</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">敏感数据须获得明确书面同意</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">20 岁以下须获得监护人同意</div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🛡️</span> DPO 与数据泄露</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">数据控制者/处理者须任命 DPO <span class="tag tag-critical">强制</span></div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">数据泄露须在 72 小时内通知 PDPC</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">高风险泄露须通知受影响数据主体</div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🌐</span> 跨境传输</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">跨境传输须获得数据主体同意或满足法定条件</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">接收国须有同等数据保护标准</div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">⚠️</span> 处罚力度</h3>
+        <div class="check-item"><div class="status pending">!</div><div class="text">行政罚款最高 ฿700 万</div></div>
+        <div class="check-item"><div class="status pending">!</div><div class="text">刑事处罚可监禁最高 1 年 <span class="tag tag-critical">刑事</span></div></div>
+        <div class="check-item"><div class="status pending">!</div><div class="text">PDPC 2025 年起加大执法力度</div></div>
+      </div>
+    `
+  },
+  id: {
+    title: '<span class="dot" style="background:var(--id)"></span> 印尼 PDP Law（个人数据保护法）',
+    content: `
+      <div class="fine-card">
+        <div class="fine-amount">¥70亿（约 440 万美元）或全球营收 2%</div>
+        <div class="fine-desc">PDP Law 最高罚款 | 刑事处罚可监禁 5 年</div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">📋</span> 同意与数据处理</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">须获得明确同意并告知处理目的</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">敏感数据处理须获得明确同意</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">儿童数据须获得父母/监护人同意</div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🌐</span> 跨境传输</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">采用"充分性认定"模式评估接收国保护水平</div></div>
+        <div class="check-item"><div class="status new">!</div><div class="text">公共部门数据须本地化存储 <span class="tag tag-critical">强制</span></div></div>
+        <div class="check-item"><div class="status pending">⏳</div><div class="text">政府数据保护机构 2025 年全面运作 <span class="tag tag-2026">执行中</span></div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🛡️</span> 合规要求</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">数据泄露须在 72 小时内通知数据主体和监管机构</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">须任命数据保护官（DPO）</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">数据处理活动须记录并保存</div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">⚠️</span> 处罚力度</h3>
+        <div class="check-item"><div class="status pending">!</div><div class="text">行政罚款最高 ¥70亿 或全球营收 2%</div></div>
+        <div class="check-item"><div class="status pending">!</div><div class="text">刑事处罚：监禁最高 5 年、罚款最高 ¥50亿 <span class="tag tag-critical">刑事</span></div></div>
+      </div>
+    `
+  },
+  au: {
+    title: '<span class="dot" style="background:var(--au)"></span> 澳大利亚 Privacy Act 1988',
+    content: `
+      <div class="fine-card">
+        <div class="fine-amount">A$50,000,000（约 3200 万美元）</div>
+        <div class="fine-desc">Privacy Act 最高罚款 | 2022 年修正后显著提高</div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">📋</span> 核心要求</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">13 条澳大利亚隐私原则（APPs）覆盖数据处理全生命周期</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">个人信息收集须合法、必要、合理</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">用户可访问和更正个人信息</div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🌐</span> 跨境传输</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">跨境传输须确保接收方遵守 APPs</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">可通过合同条款或充分性认定保障</div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🛡️</span> 2022-2026 改革</h3>
+        <div class="check-item"><div class="status new">!</div><div class="text">Privacy Act Review 报告建议引入"合理隐私期待"原则 <span class="tag tag-2026">改革中</span></div></div>
+        <div class="check-item"><div class="status new">!</div><div class="text">拟引入数据泄露通知强制义务（立法推进中）</div></div>
+        <div class="check-item"><div class="status new">!</div><div class="text">拟加强儿童在线隐私保护</div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">⚠️</span> 处罚力度</h3>
+        <div class="check-item"><div class="status pending">!</div><div class="text">重大/反复违规：最高 A$5000万 或 30% 调整后营收</div></div>
+        <div class="check-item"><div class="status pending">!</div><div class="text">一般违规：最高 A$250万</div></div>
+        <div class="check-item"><div class="status pending">!</div><div class="text">OAIC 可发布罚款通知、寻求法院禁令</div></div>
+      </div>
+    `
+  },
+  my: {
+    title: '<span class="dot" style="background:var(--my)"></span> 马来西亚 PDPA 修正案',
+    content: `
+      <div class="fine-card">
+        <div class="fine-amount">RM10,000,000（约 210 万美元）</div>
+        <div class="fine-desc">PDPA 2024 修正案最高罚款 | 取消原有 RM50万 上限</div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">📋</span> 核心要求</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">2024 修正案显著提高罚款上限 <span class="tag tag-2026">2024 修正</span></div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">须任命数据保护官（DPO）</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">数据泄露须在 72 小时内通知个人数据保护部</div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🌐</span> 跨境传输</h3>
+        <div class="check-item"><div class="status new">!</div><div class="text">2025 年 4 月起采用充分性认定模式 <span class="tag tag-2026">2025.04 生效</span></div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">跨境传输须确保接收方提供同等保护水平</div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">⚠️</span> 处罚力度</h3>
+        <div class="check-item"><div class="status pending">!</div><div class="text">最高罚款 RM1000万（2024 修正前仅 RM50万）</div></div>
+        <div class="check-item"><div class="status pending">!</div><div class="text">可禁止数据处理活动</div></div>
+        <div class="check-item"><div class="status pending">!</div><div class="text">刑事处罚：监禁最高 10 年</div></div>
       </div>
     `
   },
@@ -623,6 +1126,191 @@ const panels = {
         <div class="check-item"><div class="status done">✓</div><div class="text">传输到"充分保护"国家或需同意+书面保障</div></div>
         <div class="check-item"><div class="status done">✓</div><div class="text">72 小时内向 KVKK 报告数据泄露</div></div>
         <div class="check-item"><div class="status new">!</div><div class="text">竞争委员会加大执法（Google 罚 3420 万美元、Meta 罚 1850 万美元）</div></div>
+      </div>
+    `
+  },
+  cn: {
+    title: '<span class="dot" style="background:var(--cn)"></span> 中国 PIPL + DSL + 数据安全法',
+    content: `
+      <div class="fine-card">
+        <div class="fine-amount">¥5000万 或上年度营收 5%</div>
+        <div class="fine-desc">PIPL 最高罚款 | 三法框架（PIPL + DSL + 数据安全法）</div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🔐</span> 同意与合法性基础</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">以显著方式、清晰易懂的真实意思表示获取同意</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">处理敏感个人信息须取得单独同意</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">跨境提供个人信息须取得单独同意</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">用户有权撤回同意，撤回不影响此前合法处理</div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🌐</span> 跨境传输（三条通道）</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">通过安全评估（关键信息基础设施运营者 / 大量数据） <span class="tag tag-critical">强制</span></div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">通过个人信息保护认证</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">订立标准合同（SCC）并向省级网信部门备案</div></div>
+        <div class="check-item"><div class="status new">!</div><div class="text">《网络数据安全管理条例》细化数据分类分级要求 <span class="tag tag-2026">2025.01 生效</span></div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🛡️</span> 数据安全与合规</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">数据处理者须事前开展个人信息保护影响评估（PIA）</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">发生数据泄露须立即采取补救措施并通知监管部门和用户</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">处理 100 万以上用户数据须向省级网信部门备案</div></div>
+        <div class="check-item"><div class="status new">!</div><div class="text">重要数据出境须完成安全评估（DSL 第 31 条）</div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">⚠️</span> 处罚力度</h3>
+        <div class="check-item"><div class="status pending">!</div><div class="text">最高罚款 ¥5000万 或上年度营收 5% <span class="tag tag-critical">最高</span></div></div>
+        <div class="check-item"><div class="status pending">!</div><div class="text">可责令暂停业务、吊销营业执照、禁止从业</div></div>
+        <div class="check-item"><div class="status pending">!</div><div class="text">情节严重构成犯罪的依法追究刑事责任</div></div>
+      </div>
+    `
+  },
+  jp: {
+    title: '<span class="dot" style="background:var(--jp)"></span> 日本 APPI（个人信息保护法）',
+    content: `
+      <div class="fine-card">
+        <div class="fine-amount">¥100,000,000（约 670 万美元）</div>
+        <div class="fine-desc">APPI 2022 修正案最高罚款 | 对法人实体的行政处罚</div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🔐</span> 同意与数据处理</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">明确指定利用目的，不得超出合理范围</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">要约注册/退出机制（opt-out）须满足法定条件</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">敏感信息（种族、信仰、社会身份等）处理需本人同意</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">数据安全管理者须采取必要安全管理措施</div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🌐</span> 跨境传输</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">跨境传输须取得本人同意或满足"充分性"认定</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">接收国须具备与 APPI 相当的数据保护体系</div></div>
+        <div class="check-item"><div class="status new">!</div><div class="text">PPC 持续审查跨境传输合规，重点关注 AI 数据使用 <span class="tag tag-2026">强化</span></div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🛡️</span> 数据泄露通知</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">数据泄露须"速报"（尽快）报告 PPC 和本人</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">可能造成损害的泄露须在 30-60 日内提交详细报告</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">维护数据泄露登记簿</div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">⚠️</span> 2022 修正案重点</h3>
+        <div class="check-item"><div class="status new">!</div><div class="text">法人实体违规可处最高 ¥1亿 行政罚款 <span class="tag tag-critical">新增</span></div></div>
+        <div class="check-item"><div class="status new">!</div><div class="text">数据泄露须在确认后 3-5 日内"速报" PPC</div></div>
+        <div class="check-item"><div class="status new">!</div><div class="text">个人信息委员会（PPC）执法权限显著增强</div></div>
+      </div>
+    `
+  },
+  kr: {
+    title: '<span class="dot" style="background:var(--kr)"></span> 韩国 PIPA（个人信息保护法）',
+    content: `
+      <div class="fine-card">
+        <div class="fine-amount">全球营收 3% 或 ₩500亿（约 3700 万美元）</div>
+        <div class="fine-desc">PIPA 修正案最高罚款 | PIPC 积极执法</div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🔐</span> 同意与合法性基础</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">以清晰、易懂方式告知处理目的和项目后获取同意</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">敏感信息和唯一个人识别信息需单独同意</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">用户可随时撤回同意，处理者须告知后果</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">14 岁以下儿童须取得法定代理人同意</div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🌐</span> 跨境传输</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">跨境传输须取得本人同意并告知接收方信息</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">接收国须有相当的数据保护水平或提供替代保障</div></div>
+        <div class="check-item"><div class="status new">!</div><div class="text">PIPC 加强对跨境传输合规审查 <span class="tag tag-2026">强化</span></div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🛡️</span> 执法与处罚</h3>
+        <div class="check-item"><div class="status pending">!</div><div class="text">Meta 因违规处理广告数据被罚 ₩2160亿（2023） <span class="tag tag-critical">先例</span></div></div>
+        <div class="check-item"><div class="status pending">!</div><div class="text">PIPC 独立运作，执法力度持续加强</div></div>
+        <div class="check-item"><div class="status new">!</div><div class="text">数据泄露须在 72 小时内向 PIPC 报告</div></div>
+      </div>
+    `
+  },
+  us: {
+    title: '<span class="dot" style="background:var(--us)"></span> 美国 CCPA/CPRA + 州隐私法',
+    content: `
+      <div class="fine-card">
+        <div class="fine-amount">$2,500/次（过失） | $7,500/次（故意）</div>
+        <div class="fine-desc">CCPA/CPRA 最高罚款 | 未成年人违规 $7,500/次</div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">📋</span> CCPA/CPRA（加州）</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">消费者有权知道收集的个人信息类别和用途</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">消费者有权删除个人信息（"被遗忘权"）</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">消费者有权选择退出个人信息出售/共享</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">敏感个人信息须提供限制使用和披露的选项</div></div>
+        <div class="check-item"><div class="status new">!</div><div class="text">CPRA 建立加州隐私保护局（CPPA）加强执法 <span class="tag tag-2026">持续强化</span></div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🌐</span> 跨境与联邦层面</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">无联邦统一数据保护法，各州独立立法</div></div>
+        <div class="check-item"><div class="status new">!</div><div class="text">19 个州已通过综合隐私法（截至 2026） <span class="tag tag-2026">2026 新增</span></div></div>
+        <div class="check-item"><div class="status new">!</div><div class="text">Delaware、NH、NJ、NE、KY 等州新法 2026 年生效</div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">👶</span> 未成年人保护</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">16 岁以下须 opt-in 同意才能出售个人信息</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">13 岁以下须父母/监护人同意</div></div>
+        <div class="check-item"><div class="status pending">!</div><div class="text">COPPA（联邦儿童在线隐私保护法）持续执行</div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">⚠️</span> 执法趋势</h3>
+        <div class="check-item"><div class="status pending">!</div><div class="text">CPPA 和州检察长对 Dark pattern 加大执法</div></div>
+        <div class="check-item"><div class="status pending">!</div><div class="text">私人诉讼权仅限数据泄露（CCPA §1798.150）</div></div>
+      </div>
+    `
+  },
+  br: {
+    title: '<span class="dot" style="background:var(--br)"></span> 巴西 LGPD（通用数据保护法）',
+    content: `
+      <div class="fine-card">
+        <div class="fine-amount">R$50,000,000 或全球营收 2%</div>
+        <div class="fine-desc">LGPD 最高罚款 | 每次违规独立计算</div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🔐</span> 同意与合法性基础</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">以清晰、明确的方式获取自由、知情、无歧义的同意</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">处理敏感数据须获取明确且突出的同意</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">用户可随时撤回同意，与给予同意同等便捷</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">10 岁以下儿童须父母/监护人同意</div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🌐</span> 跨境传输</h3>
+        <div class="check-item"><div class="status done">✓</div><div class="text">跨境传输须基于同意、合同必要或充分性认定</div></div>
+        <div class="check-item"><div class="status new">!</div><div class="text">ANPD 发布跨境传输指南和充分性认定标准 <span class="tag tag-2026">强化</span></div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">🛡️</span> ANPD 执法（2025-2026）</h3>
+        <div class="check-item"><div class="status new">!</div><div class="text">ANPD 发布平台监控、生物识别数据处理新法令 <span class="tag tag-2026">2026 新增</span></div></div>
+        <div class="check-item"><div class="status new">!</div><div class="text">儿童数据保护强化，要求年龄核验机制</div></div>
+        <div class="check-item"><div class="status pending">!</div><div class="text">数据泄露须在合理时间内报告 ANPD 和数据主体</div></div>
+        <div class="check-item"><div class="status done">✓</div><div class="text">须任命数据保护官（DPO），向 ANPD 公开联系方式</div></div>
+      </div>
+
+      <div class="compliance-section">
+        <h3><span class="icon">⚠️</span> 处罚力度</h3>
+        <div class="check-item"><div class="status pending">!</div><div class="text">简单处罚：每次违规 R$50万（约 10 万美元）</div></div>
+        <div class="check-item"><div class="status pending">!</div><div class="text">严重处罚：每次违规 R$5000万 或全球营收 2%</div></div>
+        <div class="check-item"><div class="status pending">!</div><div class="text">可禁止数据处理活动、公开违规信息</div></div>
       </div>
     `
   }
